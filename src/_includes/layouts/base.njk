@@ -1,19 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="w-full">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-43MNK8C6YJ"</script>>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-43MNK8C6YJ');
+</script>
   <head>
      <link rel="stylesheet" type="text/css" href="/assets/main.css" />
      {% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Lato&display=swap' %}
   </head>
-  <body>
-    {% if (title == "Home") %}
-      {% include "components/heroHead.njk" %}
-    {% else %}
-      {% include "components/standardHeader.njk" %}
-    {% endif %}
-    <main>
-      {{ content | safe }}
-    </main>
-    <script src="/assets/main.js"></script>
+  <body class="w-full text-base">
+    <article>
+      {% if (title == "Home") %}
+        {% include "components/heroHead.njk" %}
+      {% else %}
+        {% include "components/standardHeader.njk" %}
+      {% endif %}
+      <main class="min-h-screen pt-20">
+        {{ content | safe }}
+      </main>
+      <script src="/assets/main.js"></script>
+      {%include "components/standardFooter.njk"%}
+    </article>
   </body>
+  
 </html>
-{%include "components/standardFooter.njk"%}
